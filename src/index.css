@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lee Mason Funeral Home — dignified, warm, contemplative */
+
+@layer base {
+  :root {
+    /* Surfaces — warm cream */
+    --background: 38 33% 96%;
+    --foreground: 215 30% 15%;
+
+    --card: 38 30% 98%;
+    --card-foreground: 215 30% 15%;
+
+    --popover: 38 30% 98%;
+    --popover-foreground: 215 30% 15%;
+
+    /* Primary — deep navy (trust, dignity) */
+    --primary: 215 45% 18%;
+    --primary-foreground: 38 33% 96%;
+
+    /* Secondary — soft warm sand */
+    --secondary: 36 25% 90%;
+    --secondary-foreground: 215 45% 18%;
+
+    --muted: 36 20% 92%;
+    --muted-foreground: 215 15% 40%;
+
+    /* Accent — muted antique gold */
+    --accent: 38 45% 52%;
+    --accent-foreground: 215 45% 18%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 38 33% 96%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 88%;
+    --ring: 38 45% 52%;
+
+    --radius: 0.25rem;
+
+    /* Brand-specific */
+    --gold: 38 45% 52%;
+    --gold-soft: 38 50% 75%;
+    --navy-deep: 215 50% 12%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(215 50% 12% / 0.85) 0%, hsl(215 50% 8% / 0.7) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 45% 52%), hsl(38 55% 65%));
+    --gradient-section: linear-gradient(180deg, hsl(38 33% 96%), hsl(36 25% 92%));
+
+    --shadow-soft: 0 4px 24px -8px hsl(215 45% 18% / 0.12);
+    --shadow-elegant: 0 20px 60px -20px hsl(215 50% 12% / 0.25);
+    --shadow-gold: 0 8px 32px -12px hsl(38 45% 52% / 0.4);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 38 33% 96%;
+    --sidebar-foreground: 215 30% 15%;
+    --sidebar-primary: 215 45% 18%;
+    --sidebar-primary-foreground: 38 33% 96%;
+    --sidebar-accent: 36 25% 90%;
+    --sidebar-accent-foreground: 215 45% 18%;
+    --sidebar-border: 36 20% 85%;
+    --sidebar-ring: 38 45% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .bg-gradient-section {
+    background: var(--gradient-section);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
